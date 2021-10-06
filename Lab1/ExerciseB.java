@@ -11,25 +11,25 @@ public class ExerciseB {
 
 
     public static void main(String[] args) throws IOException {
-        Scanner scan = new Scanner( System.in );
+        Scanner scan = new Scanner(System.in);
 
-        System.out.println( "enter path of file you want to count" );
-        File srcFile = new File( scan.nextLine() );
+        System.out.println("enter path of file you want to count");
+        File srcFile = new File(scan.nextLine());
 
         int counter = 0;
-        FileInputStream fileStream = new FileInputStream( srcFile );
+        FileInputStream fileStream = new FileInputStream(srcFile);
         byte[] byteArray = new byte[(int) srcFile.length()];
-        fileStream.read( byteArray );
-        String str = new String( byteArray );
-        String[] data = str.split( " " );
+        fileStream.read(byteArray);
+        String str = new String(byteArray);
+        String[] data = str.split(" ");
 
         for (int i = 0; i < data.length; i++) {
             counter++;
         }
 
 
-        FileWriter fileWriter = new FileWriter( "C:\\Users\\alsul\\OneDrive\\Desktop\\WordStatistic.txt" );
-        fileWriter.write( "the number of words in the src file is "+counter );
+        FileWriter fileWriter = new FileWriter("C:\\Users\\alsul\\OneDrive\\Desktop\\WordStatistic.txt");
+        fileWriter.write("the number of words in the src file is " + counter);
         fileWriter.close();
 
 
